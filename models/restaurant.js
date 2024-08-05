@@ -2,8 +2,9 @@ const mongoose = require("mongoose");
 
 const resSchema = new mongoose.Schema({
   ownerName: String,
-  restaurantName: String,
+  resName: String,
   address: String,
+  resImg: String,
   number: {
     type: String,
     maxLength: 10,
@@ -12,8 +13,15 @@ const resSchema = new mongoose.Schema({
 
   createdBy: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "User",
+    ref: "user",
   },
+
+  dish: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "dish",
+    },
+  ],
 });
 
 const Restaurant = mongoose.model("res", resSchema);

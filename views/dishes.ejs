@@ -1,0 +1,25 @@
+<%- include('partials/header') %>
+
+
+    <%- include('partials/nav') %>
+
+
+
+        <form action="/users/dishes/<%= id %>" method="post" class="m-auto w-1/2 p-5 mt-10 bg-gray-300 rounded-lg">
+
+            <input type="text" class="w-full rounded-lg border-2 border-black px-4 py-2 mt-2" name="dishImg"
+                placeholder="Dish Image">
+            <input type="text" class="w-full rounded-lg border-2 border-black px-4 py-2 mt-2" name="dishName"
+                placeholder="dishName">
+            <input type="text" class="w-full rounded-lg border-2 border-black px-4 py-2 mt-2" name="dishPrice"
+                placeholder="Dish Price">
+            <input type="text" class="w-full rounded-lg border-2 border-black px-4 py-2 mt-2 mb-4" name="category"
+                placeholder="Dish type">
+
+
+            <button class="px-3 py-2 rounded-lg bg-black text-white">Sumbit</button>
+
+        </form>
+
+
+        <%- include('partials/footer') %>

@@ -1,13 +1,56 @@
 <%- include('partials/header') %>
 
     <%- include('partials/nav') %>
-        <a href="owner">Owner Site</a>
-
         <h1>
-            <%= user.username %>
+            <a href="owner">Owner Site</a>
+            <a href="/users/logout"> LogOut</a>
         </h1>
+        <div>
+            <h1 class="text-center text-3xl font-semibold">
+                Welcome <span class="text-lime-400 font-extrabold  uppercase">
+                    <%= user.username %>
+                </span>
+            </h1>
+
+            <div class="flex flex-wrap p-5 gap-3">
+
+                <% user.Res.forEach((res)=>{ %>
+
+
+                    <div class="h-[50vh] w-[64vh]  rounded-lg  bg-red-300 text-l">
+
+                        <div class="h-[30vh] w-full bg-red-500 rounded-t-lg ">
+
+                            <a href="/users/menu/<%= res._id%>"> <img src="<%= res.resImg %>"
+                                    class="h-full w-full  object-center object-cover rounded-t-lg " alt="">
+                            </a>
+                        </div>
+
+
+                        <div>
+                            <h3 class="">
+                                <%= res.resName %>
+                            </h3>
+                            <p>
+                                <%= res.address %>
+                            </p>
+                            <p>owner: <%= res.ownerName %>
+                            </p>
+                            <p>contact: <span>
+                                    <%= res.number %>
+                                </span></p>
+                        </div>
+
+                    </div>
+
+                    <% }) %>
+            </div>
 
 
 
+
+
+
+        </div>
 
         <%- include('partials/footer') %>
